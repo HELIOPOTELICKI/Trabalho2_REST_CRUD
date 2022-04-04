@@ -1,0 +1,8 @@
+npm install -g typeorm
+npm install ts-node -g 
+
+typeorm migration:create --name CreateSupplierTable && typeorm migration:create --name CreateProductTable && typeorm migration:create --name CreateUserTable
+
+ts-node ./node_modules/typeorm/cli.js migration:generate -n migration
+
+npm run migration:run
